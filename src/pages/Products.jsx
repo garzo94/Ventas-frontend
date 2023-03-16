@@ -12,7 +12,7 @@ export default function Products() {
       headers: { Authorization: `Token ${token}` }, // Pasar el token en el encabezado Authorization
     };
     axios
-      .get("http://127.0.0.1:8000/api/productos/", config)
+      .get("https://agenciasway.up.railway.app/api/productos/", config)
       .then((response) => {
         setProducts(response.data);
       })

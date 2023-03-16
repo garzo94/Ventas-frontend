@@ -132,7 +132,7 @@ export default function Ventas() {
       headers: { Authorization: `Token ${token}` }, // Pasar el token en el encabezado Authorization
     };
     axios
-      .get("http://127.0.0.1:8000/api/cli/", config)
+      .get("https://agenciasway.up.railway.app/api/cli/", config)
       .then((response) => {
         setClientes(response.data.clientes);
         setProductos(response.data.productos);
@@ -160,7 +160,7 @@ export default function Ventas() {
       headers: { Authorization: `Token ${token}` }, // Pasar el token en el encabezado Authorization
     };
     axios
-      .get("http://127.0.0.1:8000/api/ventas/", config)
+      .get("https://agenciasway.up.railway.app/api/ventas/", config)
       .then((response) => {
         setVentas(response.data);
       })

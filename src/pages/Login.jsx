@@ -34,7 +34,7 @@ export default function Login() {
 
   const handleSubmit = ({ username, password }) => {
     axios
-      .post("http://127.0.0.1:8000/api/login/", {
+      .post("https://agenciasway.up.railway.app/api/login/", {
         username: username,
         password: password,
       })

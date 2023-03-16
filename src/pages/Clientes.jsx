@@ -77,7 +77,7 @@ export default function Clientes() {
       headers: { Authorization: `Token ${token}` }, // Pasar el token en el encabezado Authorization
     };
     axios
-      .get("http://127.0.0.1:8000/api/clientes/", config)
+      .get("https://agenciasway.up.railway.app/api/clientes/", config)
       .then((response) => {
         setClients(response.data);
         setLoading(True);
@@ -91,11 +91,15 @@ export default function Clientes() {
   const handleProcessRowUpdate = (newRow, oldRow) => {
     const token = localStorage.getItem("authToken");
     axios
-      .put(`http://127.0.0.1:8000/api/clientes/${newRow.id}/`, newRow, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      })
+      .put(
+        `https://agenciasway.up.railway.app/api/clientes/${newRow.id}/`,
+        newRow,
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+          },
+        }
+      )
       .then((response) => {})
       .catch((error) => {
         console.log(error);
@@ -107,7 +111,7 @@ export default function Clientes() {
   const handleDeleteCliente = (params) => {
     const token = localStorage.getItem("authToken");
     axios
-      .delete(`http://127.0.0.1:8000/api/clientes/${params.id}/`, {
+      .delete(`https://agenciasway.up.railway.app/api/clientes/${params.id}/`, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -125,7 +129,7 @@ export default function Clientes() {
   const handleAddClient = (data) => {
     const token = localStorage.getItem("authToken");
     axios
-      .post(`http://127.0.0.1:8000/api/clientes/`, data, {
+      .post(`https://agenciasway.up.railway.app/api/clientes/`, data, {
         headers: {
           Authorization: `Token ${token}`,
         },
