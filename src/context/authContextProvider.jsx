@@ -30,7 +30,7 @@ export default function AuthContextProvider({ children }) {
 
   useEffect(() => {
     loadAuthUser();
-  }, [isAuthenticated]);
+  }, []);
 
   return (
     <AuthContext.Provider value={providerValue}>

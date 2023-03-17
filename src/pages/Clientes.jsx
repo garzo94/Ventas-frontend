@@ -102,7 +102,7 @@ export default function Clientes() {
       )
       .then((response) => {})
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         // handle error
       });
   };
@@ -120,7 +120,7 @@ export default function Clientes() {
         getClientes();
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         // handle error
       });
   };
@@ -140,7 +140,7 @@ export default function Clientes() {
         handleClickSnack();
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         // handle error
       });
   };
@@ -172,7 +172,6 @@ export default function Clientes() {
     {
       field: "actions",
       headerName: "Actions",
-      type: "actions",
       width: 150,
       renderCell: (params) => (
         <Tooltip title="Eliminar cliente">
