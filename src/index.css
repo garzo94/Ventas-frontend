@@ -1,3 +1,7 @@
 body {
   overflow: hidden; /* Hide scrollbars */
 }
+
+.css-1l8j5k8 {
+  position: static !important;
+}
