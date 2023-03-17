@@ -146,9 +146,10 @@ export default function Ventas() {
       precio_total: total,
       venta_detalle: nuevosDetallesVenta,
     };
-
+    console.log(data, "data!!");
     // Crear venta
     const token = localStorage.getItem("authToken");
+    // const token = "1a8b1efd8e51072cff09969a284ba565f6a803b8";
     axios
       .post(`https://agenciasway.up.railway.app/api/venta/`, data, {
         headers: {
@@ -159,11 +160,12 @@ export default function Ventas() {
         console.log(response.data, "response!");
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
         // handle error
       });
     handleClose();
     getVentas();
+    updateVentas();
     handleClickSnack();
   };
 
@@ -226,7 +228,7 @@ export default function Ventas() {
     }
   }, [producto]);
 
-  useEffect(() => {
+  function updateVentas() {
     if (ventas.length > 0) {
       const rows = ventas.map((obj) => {
         const { id, venta_detalle, cliente, fecha_venta, precio_total } = obj;
@@ -254,6 +256,9 @@ export default function Ventas() {
       });
       setVentasFormato(rows);
     }
+  }
+  useEffect(() => {
+    updateVentas();
   }, [ventas]);
 
   const getDetailPanelContent = React.useCallback(
