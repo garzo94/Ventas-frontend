@@ -146,7 +146,7 @@ export default function Ventas() {
       precio_total: total,
       venta_detalle: nuevosDetallesVenta,
     };
-    console.log(data, "data!!");
+
     // Crear venta
     const token = localStorage.getItem("authToken");
     // const token = "1a8b1efd8e51072cff09969a284ba565f6a803b8";
@@ -156,9 +156,7 @@ export default function Ventas() {
           Authorization: `Token ${token}`,
         },
       })
-      .then((response) => {
-        console.log(response.data, "response!");
-      })
+      .then((response) => {})
       .catch((error) => {
         console.log(error);
         // handle error
@@ -229,6 +227,7 @@ export default function Ventas() {
   }, [producto]);
 
   function updateVentas() {
+    console.log("");
     if (ventas.length > 0) {
       const rows = ventas.map((obj) => {
         const { id, venta_detalle, cliente, fecha_venta, precio_total } = obj;
@@ -404,6 +403,7 @@ export default function Ventas() {
               total += productoTotal;
               return (
                 <Box
+                  key={producto.id}
                   sx={{
                     width: "100%",
                     display: "flex",
